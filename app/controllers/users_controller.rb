@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        
+        @image.uid = current_user.id
 
         if @user.save
     

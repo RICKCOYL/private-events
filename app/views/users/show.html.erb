@@ -1,3 +1,3 @@
-<h3>
-<%= @user.username %>
-</h3>
+<%= @events.each do |t|%>
+    <% t.date %>
+<% end %>

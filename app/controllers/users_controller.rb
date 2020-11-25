@@ -6,12 +6,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        
-        @image.uid = current_user.id
-
         if @user.save
-    
-          redirect_to user_path(:id)
+        redirect_to user_path(:id)
     
         else
           render :new
@@ -19,11 +15,10 @@ class UsersController < ApplicationController
     end
 
     def show
+      @user = User.find_by(params[:username])
+
+   
     end
 
-    private
-
-    def user_params
-      params.require(:user).permit(:username)
-    end
+   
 end

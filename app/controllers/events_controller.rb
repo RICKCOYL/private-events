@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :require_login, only:[:create, :show]
+
   def index
        @event = Event.all
   end

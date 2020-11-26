@@ -12,5 +12,11 @@ class SessionsController < ApplicationController
                 flash.now.alert = 'Login failed'
                 render :new
               end
-            end
+      end
+
+      def destroy
+        session.delete(:current_user)
+        flash[:notice] = "You have successfully logged out."
+        redirect_to root_url
+      end
 end

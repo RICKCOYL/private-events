@@ -4,10 +4,12 @@ class EventsController < ApplicationController
   end
     def new
         @event = Event.new
+       
     end
 
     def create
-        @event = Event.new(event_params)
+      @event = current_user.created_events.build(event_params)
+
         if @event.save
         redirect_to event_path(:id)
     
@@ -17,7 +19,7 @@ class EventsController < ApplicationController
     end
 
     def show
-      @event = Event.find_by(params[:date])
+      @event = Event.find_by(params[:date ,:description])
     end
 
 end

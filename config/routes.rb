@@ -5,14 +5,12 @@ Rails.application.routes.draw do
   #delete '/logout', to: 'sessions#destroy'
   
   resources :users, only: [:create, :new, :show]
-
+  resources :events, only: [:create, :new, :show]
   get 'sessions/new'
-
-
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'
-
+  root to: 'events#index'
 
 
 end

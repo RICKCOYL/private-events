@@ -13,8 +13,8 @@
 	<% if !logged_in? %>
 						<%= link_to 'Log in', login_path %>
 					<% else %>
-					
-						<li><%= link_to 'Log out', logout_path, method: :delete %>
+					<%= link_to "Create event", new_event_path %>
+						<%= link_to 'Log out', logout_path, method: :delete %>
 					<% end %>
 
           	<% flash.each do |type, message| %>

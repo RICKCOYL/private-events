@@ -1,7 +1,9 @@
 <h3>Upcoming events <h3>
  <% @upcoming_events.each do |event| %>
   <strong>Date:</strong> <%= event.date %></li>
+  <br>
   <strong>Description:</strong> <%= event.description %>
+  
  <% end %>
 
 <h3>Past events <h3>
@@ -10,6 +12,7 @@
  <%  @past_events.each do |event| %>
   <strong>Date:</strong> <%= event.date %></li>
   <strong>Description:</strong> <%= event.description %>
+  <br>
  <% end %>
 
 

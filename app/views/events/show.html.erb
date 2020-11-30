@@ -1,5 +1,15 @@
+<h1>All events </h1>
+
 <h3>
  <%= @event.date %>
  <%= @event.description %>
- <%= @event.creator.username %>
+ <%= @event.creator.username %> 
 </h3>
+
+
+
+<h4> Attendees </h4>
+<% @event.attendees.each do |t| %>
+  <%= t.username %>
+<% end %>
+

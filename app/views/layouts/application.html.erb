@@ -18,16 +18,6 @@
  
   </head>
  <body>
-	<% if !logged_in? %>
-						<%= link_to 'Log in', login_path %>
-					<% else %>
-					<%= link_to "Create event", new_event_path %>
-						<%= link_to 'Log out', logout_path, method: :delete %>
-					<% end %>
-
-          	<% flash.each do |type, message| %>
-			<div><%= message %></div>
-		<% end %>
     <%= render 'users/navbar' %>
     <div class="container">
     <br>

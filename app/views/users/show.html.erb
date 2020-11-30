@@ -1,20 +1,15 @@
 <h3>Upcoming events <h3>
-
-
-<% @user.attendances.each do |t| %>
-   <% if Date.today < t.date %>
-        <%= t.date %>
-        <%= t.description %>
-     <% end %>
-<% end %>
+ <% @upcoming_events.each do |event| %>
+  <strong>Date:</strong> <%= event.date %></li>
+  <strong>Description:</strong> <%= event.description %>
+ <% end %>
 
 <h3>Past events <h3>
 
 
-<% @user.attended_events.each do |t| %>
-   <% if Date.today > t.date %>
-        <%= t.date %>
-        <%= t.description %>
-     <% end %>
-<% end %>
+ <%  @past_events.each do |event| %>
+  <strong>Date:</strong> <%= event.date %></li>
+  <strong>Description:</strong> <%= event.description %>
+ <% end %>
+
 

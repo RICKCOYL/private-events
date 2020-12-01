@@ -28,6 +28,9 @@ class ApplicationController < ActionController::Base
     def event_params
       params.require(:event).permit(:date, :description)
     end
+    def attendance_params
+      params.require(:attendance).permit(:attended_events_id)
+    end
 
    
 end

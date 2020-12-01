@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'
   root to: 'events#index'
+  post 'attendance', to: 'events#create_attendance'
 
 
 end

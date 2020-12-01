@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
        @event = Event.all
+       @attendance = Attendance.new
   end
     def new
         @event = Event.new
@@ -23,6 +24,18 @@ class EventsController < ApplicationController
 
     def show
       @event = Event.find(params[:id])
+    end
+    def create_attendance
+      #raise params[:event_id]
+      @attendance = current_user.attendances.find_or_initialize_by(attendance_params)
+
+      if @attendance.save
+      redirect_to root_path
+  
+      else
+        render :new
+      end
+
     end
    
 end

@@ -7,6 +7,6 @@ class CreateAttendances < ActiveRecord::Migration[6.0]
       t.timestamps
     end
     add_foreign_key :attendances, :users, column: :attendee_id
-    add_foreign_key :attendances, :events, column: :attended_event_id
+    add_foreign_key :attendances, :events, column: :attended_events_id
   end
 end

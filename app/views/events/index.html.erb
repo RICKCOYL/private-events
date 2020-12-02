@@ -1,5 +1,5 @@
-<h1>All events </h1>
-<% @event.each do |t|%>
+rubo<h3>Upcoming events </h3>
+ <% @upcoming_events.each do |t| %>
   <%= t.description %>
   <br/>
   <% unless attends? t.id %>
@@ -13,14 +13,8 @@
 <% end %>
 <% end %>
 
-<h3>Upcoming events <h3>
- <% @upcoming_events.each do |event| %>
-  <br>
-   <%= event.description %>
-  
- <% end %>
 
-<h3>Past events <h3>
+<h3>Past events </h3>
 
 
  <%  @past_events.each do |event| %>

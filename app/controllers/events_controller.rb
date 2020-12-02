@@ -6,9 +6,10 @@ class EventsController < ApplicationController
        @attendance = Attendance.new
        @past_events = Event.past_events
        @upcoming_events = Event.upcoming_events
-  end
 
-    def new
+
+  end
+  def new
         @event = Event.new
        
     end
@@ -27,15 +28,13 @@ class EventsController < ApplicationController
 
     def show
       @event = Event.find(params[:id])
-      #@event = Event.all
     end
-
     def create_attendance
       #raise params[:event_id]
       @attendance = current_user.attendances.find_or_initialize_by(attendance_params)
 
       if @attendance.save
-      redirect_to events_path
+      redirect_to root_path
   
       else
         render :new

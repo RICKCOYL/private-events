@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     @attendance = Attendance.new
     @past_events = Event.past_events
     @upcoming_events = Event.upcoming_events
+    
   end
 
   def new
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @created_events = current_user.created_events
   end
 
   def create_attendance

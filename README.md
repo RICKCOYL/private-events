@@ -1,5 +1,5 @@
-#Rails_forms
-This project is designed to add users and events and also show attendees for a particular event.
+## Rails_forms
+This project is designed to add users and events and also show attendees for a particular event.A user can sign up ,login and logout.Only logged in user can create an event.
 ## Application Functionality
 - User can sign up ,login and logout.
 - Event can be created 

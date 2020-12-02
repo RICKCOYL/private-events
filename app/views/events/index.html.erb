@@ -1,12 +1,14 @@
 <h1>All events </h1>
 <% @event.each do |t|%>
   <%= t.description %>
-  <%unless attends? t.id %>
+  <br/>
+  <% unless attends? t.id %>
    <%= form_with model: @attendance, url: attendance_path  do |f| %>
    <%= f.hidden_field :attended_events_id, value: t.id %> 
   
-    <%= f.submit "Submit" %>
+    <%= f.submit "Attend" %>
+ 
   
-<% end %>
+      <% end %>
 <% end %>
 <% end %>

@@ -15,8 +15,9 @@ class ApplicationController < ActionController::Base
 
   def require_login
     return if logged_in?
-      flash[:danger] = 'Please login!'
-      redirect_to login_path
+
+    flash[:danger] = 'Please login!'
+    redirect_to login_path
   end
 
   def user_params

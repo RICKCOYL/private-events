@@ -12,3 +12,21 @@
       <% end %>
 <% end %>
 <% end %>
+
+<h3>Upcoming events <h3>
+ <% @upcoming_events.each do |event| %>
+  <br>
+   <%= event.description %>
+  
+ <% end %>
+
+<h3>Past events <h3>
+
+
+ <%  @past_events.each do |event| %>
+  
+   <%= event.description %>
+  <br>
+ <% end %>
+
+

@@ -17,15 +17,12 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find_by(params[:username])
-      @past_events = Event.past_events
-      @upcoming_events = Event.upcoming_events
+     
     end
+
     def destroy
       session.delete(:current_user)
       flash[:notice] = "You have successfully logged out."
       redirect_to root_url
     end
-
-   
-   
 end

@@ -4,11 +4,8 @@ RSpec.describe Event, type: :model do
   before :each do
     @user = User.create(username: 'simon')
     @event1 = @user.created_events.create(date: '02.09.2030', description: 'Party')
-   
-   
   end
 
-  
   context 'has associations and validations' do
     it 'can be created' do
       expect(Event.first).to eq(@event1)
@@ -25,6 +22,5 @@ RSpec.describe Event, type: :model do
       @event1.date = nil
       expect(@event1).to_not be_valid
     end
-
   end
 end

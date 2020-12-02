@@ -8,9 +8,9 @@ RSpec.describe Attendance, type: :model do
     @event_attendee2 = @event.attendances.create(attendee_id: @user.id)
   end
   it 'Checks if event is attended' do
-  expect(Attendance.first).to eq(@event_attendee1)
-end
-it 'Checks if user can attend an event' do
-  expect(Attendance.second).to eq(@event_attendee2)
-end
+    expect(Attendance.first).to eq(@event_attendee1)
+  end
+  it 'Checks if user can attend an event' do
+    expect(Attendance.second).to eq(@event_attendee2)
+  end
 end

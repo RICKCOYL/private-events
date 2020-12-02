@@ -36,4 +36,5 @@ ActiveRecord::Schema.define(version: 20_201_130_124_035) do
 
   add_foreign_key 'attendances', 'events', column: 'attended_events_id'
   add_foreign_key 'attendances', 'users', column: 'attendee_id'
+
 end

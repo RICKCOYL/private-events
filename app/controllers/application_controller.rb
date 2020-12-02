@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -11,14 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    current_user
   end
 
   def require_login
-    unless logged_in?
+    return if logged_in?
       flash[:danger] = 'Please login!'
       redirect_to login_path
-    end
   end
 
   def user_params
@@ -32,5 +30,4 @@ class ApplicationController < ActionController::Base
   def attendance_params
     params.require(:attendance).permit(:attended_events_id)
   end
-
 end

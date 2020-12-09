@@ -1,0 +1,26 @@
+<h3>Upcoming events </h3>
+ <% @upcoming_events.each do |t| %>
+  <%= t.description %>
+  <br/>
+  <% unless attends? t.id %>
+   <%= form_with model: @attendance, url: attendance_path  do |f| %>
+   <%= f.hidden_field :attended_events_id, value: t.id %> 
+  
+    <%= f.submit "Attend" %>
+ 
+  
+      <% end %>
+<% end %>
+<% end %>
+
+
+<h3>Past events </h3>
+
+
+ <%  @past_events.each do |event| %>
+  
+   <%= event.description %>
+  <br>
+ <% end %>
+
+

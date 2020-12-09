@@ -1,8 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
+  attendee: one
+  attended_events: one
 
 two:
-  username: MyString
-
+  attendee: two
+  attended_events: two

@@ -1,0 +1,7 @@
+ <%= form_for @event do |f| %>
+    Date:      <%= f.date_field(:date) %>
+    <br>
+   Description: <%= f.text_field(:description) %>
+  <br>
+    <%= f.submit "Submit" %>
+<% end %>
